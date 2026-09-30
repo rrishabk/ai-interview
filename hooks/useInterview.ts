@@ -1,85 +1,220 @@
-import { useState, useEffect } from 'react';
-import { useWebSocket } from './useWebSocket';
-import { InterviewState, QuestionPayload, TranscriptPayload } from '../services/interviewSocket';
-import { useNavigate } from 'react-router-dom';
+"use client";
+
+import { useState, useEffect } from "react";
+
+import { useWebSocket } from "./useWebSocket";
+
+import {
+  InterviewState,
+  QuestionPayload,
+  TranscriptPayload
+} from "../services/interviewSocket";
+
+import { useRouter } from "next/navigation";
 
 export function useInterview(sessionId: string) {
-  const { status, lastEvent, sendAudio, sendVideo } = useWebSocket(sessionId);
-  const navigate = useNavigate();
 
-  const [interviewState, setInterviewState] = useState<InterviewState>('setup');
-  const [currentQuestion, setCurrentQuestion] = useState<QuestionPayload | null>(null);
-  const [transcript, setTranscript] = useState<TranscriptPayload[]>([]);
-  const [timeRemaining, setTimeRemaining] = useState<number>(45 * 60); // 45 minutes
+  const {
+    status,
+    lastEvent,
+    sendAudio,
+    sendVideo
+  } = useWebSocket(sessionId);
 
-  // Handle incoming WS events
+  const router = useRouter();
+
+  const [
+    interviewState,
+    setInterviewState
+  ] = useState<InterviewState>("setup");
+
+  const [
+    currentQuestion,
+    setCurrentQuestion
+  ] = useState<QuestionPayload | null>(null);
+
+  const [
+    transcript,
+    setTranscript
+  ] = useState<TranscriptPayload[]>([]);
+
+  const [
+    timeRemaining,
+    setTimeRemaining
+  ] = useState<number>(45 * 60);
+
+
   useEffect(() => {
-    if (!lastEvent) return;
+
+    if (!lastEvent) {
+      return;
+    }
 
     switch (lastEvent.event) {
-      case 'question':
-      case 'next_question':
-        setCurrentQuestion(lastEvent.payload);
-        setInterviewState('listening');
+
+      case "question":
+
+      case "next_question":
+
+        setCurrentQuestion(
+          lastEvent.payload
+        );
+
+        setInterviewState(
+          "listening"
+        );
+
         break;
-      case 'transcript_update':
+
+
+      case "transcript_update":
+
         setTranscript(prev => {
-          // If it's not final, we replace the last transcript from the same speaker, else we append
-          const p = lastEvent.payload;
-          const newTranscript = [...prev];
-          const last = newTranscript[newTranscript.length - 1];
-          if (last && last.speaker === p.speaker && !last.isFinal) {
-            newTranscript[newTranscript.length - 1] = p;
+
+          const p =
+            lastEvent.payload;
+
+          const newTranscript =
+            [...prev];
+
+          const last =
+            newTranscript[
+              newTranscript.length - 1
+            ];
+
+          if (
+            last &&
+            last.speaker === p.speaker &&
+            !last.isFinal
+          ) {
+
+            newTranscript[
+              newTranscript.length - 1
+            ] = p;
+
           } else {
+
             newTranscript.push(p);
           }
+
           return newTranscript;
         });
+
         break;
-      case 'analysis':
-        setInterviewState('processing');
+
+
+      case "analysis":
+
+        setInterviewState(
+          "processing"
+        );
+
         break;
-      case 'evaluation_result':
-        setInterviewState('evaluating');
-        // Let evaluation stay on screen for a bit before next question
+
+
+      case "evaluation_result":
+
+        setInterviewState(
+          "evaluating"
+        );
+
         break;
-      case 'completed':
-        setInterviewState('completed');
-        navigate(`/reports/${sessionId}`);
+
+
+      case "completed":
+
+        setInterviewState(
+          "completed"
+        );
+
+        router.push(
+          `/reports/${sessionId}`
+        );
+
         break;
-      case 'error':
-        // gracefully handle error without freezing
-        console.error('Interview Error Payload:', lastEvent.payload);
+
+
+      case "error":
+
+        console.error(
+          "Interview Error Payload:",
+          lastEvent.payload
+        );
+
         break;
     }
-  }, [lastEvent, navigate, sessionId]);
 
-  // Timer logic
+  }, [
+    lastEvent,
+    router,
+    sessionId
+  ]);
+
+
   useEffect(() => {
-    if (status !== 'connected' || interviewState === 'completed') return;
-    
-    const interval = setInterval(() => {
-      setTimeRemaining(prev => Math.max(0, prev - 1));
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [status, interviewState]);
 
-  // Formatting time
-  const formattedTime = `${String(Math.floor(timeRemaining / 60)).padStart(2, '0')}:${String(timeRemaining % 60).padStart(2, '0')}`;
+    if (
+      status !== "connected" ||
+      interviewState === "completed"
+    ) {
+      return;
+    }
+
+    const interval =
+      setInterval(() => {
+
+        setTimeRemaining(
+          prev =>
+            Math.max(0, prev - 1)
+        );
+
+      }, 1000);
+
+    return () =>
+      clearInterval(interval);
+
+  }, [
+    status,
+    interviewState
+  ]);
+
+
+  const formattedTime =
+    `${String(
+      Math.floor(timeRemaining / 60)
+    ).padStart(2, "0")}:${String(
+      timeRemaining % 60
+    ).padStart(2, "0")}`;
+
 
   const endInterview = () => {
-    setInterviewState('completed');
-    navigate(`/reports/${sessionId}`);
+
+    setInterviewState(
+      "completed"
+    );
+
+    router.push(
+      `/reports/${sessionId}`
+    );
   };
 
+
   return {
+
     status,
+
     interviewState,
+
     currentQuestion,
+
     transcript,
+
     formattedTime,
+
     sendAudio,
+
     sendVideo,
+
     endInterview
   };
 }

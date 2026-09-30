@@ -1,4 +1,4 @@
-// File: C:\Minor\app\layout.tsx
+// File: C:\Users\amanb\OneDrive\Desktop\final_whisper_tuned_model\ai-interview\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
