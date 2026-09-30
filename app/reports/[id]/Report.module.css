@@ -1,0 +1,288 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-8) 0 var(--space-16);
+}
+
+.reportHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 2px solid var(--color-black);
+  padding-bottom: var(--space-6);
+  margin-bottom: var(--space-12);
+}
+
+.reportTitle {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+.roleTitle {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.companyDate {
+  font-size: 16px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.companyDate span {
+  color: var(--text-tertiary);
+}
+
+.overallScoreBox {
+  text-align: right;
+}
+
+.scoreLabel {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-2);
+}
+
+.scoreValue {
+  font-family: var(--font-mono);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+.scoreTotal {
+  font-size: 24px;
+  color: var(--text-tertiary);
+}
+
+/* Grid Layouts */
+.gridTwoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  margin-bottom: var(--space-12);
+}
+
+/* Section styling */
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-6);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Monochrome Meters */
+.meterRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.meterLabel {
+  width: 160px;
+  font-size: 13px;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.meterTrack {
+  flex-grow: 1;
+  height: 2px;
+  background-color: var(--border-subtle);
+  margin: 0 var(--space-4);
+  position: relative;
+}
+
+.meterFill {
+  height: 100%;
+  background-color: var(--color-black);
+}
+
+.meterValue {
+  width: 24px;
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+/* Chart Container */
+.chartContainer {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  background-color: var(--bg-surface);
+}
+
+/* Text Lists (Strengths/Weaknesses) */
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Accordion */
+.accordion {
+  border-top: 1px solid var(--border-strong);
+}
+
+.accordionRow {
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.accordionHeader {
+  display: grid;
+  grid-template-columns: 120px 80px 1fr auto;
+  align-items: center;
+  padding: var(--space-4) 0;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.accordionHeader:hover {
+  background-color: var(--bg-surface-hover);
+}
+
+.accQuestionNum {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.accScore {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.accCategory {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.accAction {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.accordionContent {
+  padding: var(--space-6) 0 var(--space-8) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.questionBlock {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text-primary);
+  max-width: 800px;
+}
+
+.dataGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+.dataBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.dataLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dataValue {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.evidenceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background-color: var(--bg-surface-hover);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.evidenceBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.evidenceLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.evidenceValue {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .reportHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-6);
+  }
+  .overallScoreBox {
+    text-align: left;
+  }
+  .gridTwoCol {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+  .accordionHeader {
+    grid-template-columns: 100px 1fr auto;
+  }
+  .accCategory {
+    display: none;
+  }
+  .dataGrid, .evidenceGrid {
+    grid-template-columns: 1fr;
+  }
+}

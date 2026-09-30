@@ -1,0 +1,212 @@
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-8) 0;
+}
+
+.header {
+  margin-bottom: var(--space-8);
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: var(--space-4);
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.section {
+  margin-bottom: var(--space-8);
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+/* Form Controls */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.input {
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.input:focus {
+  border-color: var(--border-focus);
+}
+
+.inputRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+/* Radio Groups (for compact selections) */
+.radioGroup {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.radioLabel {
+  flex: 1;
+  text-align: center;
+  border: 1px solid var(--border-strong);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: var(--text-secondary);
+  user-select: none;
+}
+
+.radioInput {
+  display: none;
+}
+
+.radioInput:checked + .radioLabel {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+/* Dropzone */
+.dropzone {
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: var(--space-8);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  background-color: var(--bg-surface);
+}
+
+.dropzone:hover, .dropzoneActive {
+  border-color: var(--color-black);
+  background-color: var(--bg-surface-hover);
+}
+
+.dropzoneIcon {
+  margin: 0 auto var(--space-2);
+  color: var(--text-secondary);
+  width: 24px;
+  height: 24px;
+}
+
+.dropzoneText {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.dropzoneSubtext {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.fileState {
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-surface);
+}
+
+.fileInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 13px;
+}
+
+.removeButton {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+.removeButton:hover {
+  color: var(--text-primary);
+}
+
+.errorText {
+  color: #dc2626; /* Specific error color only when needed */
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Summary Box */
+.summary {
+  background-color: var(--bg-surface-hover);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-6);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.summary strong {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.submitAction {
+  width: 100%;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  transition: opacity var(--transition-fast);
+}
+
+.submitAction:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.submitAction:not(:disabled):hover {
+  opacity: 0.9;
+}

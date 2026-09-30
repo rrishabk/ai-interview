@@ -1,0 +1,27 @@
+{
+    "name":  "temp-app",
+    "private":  true,
+    "version":  "0.0.0",
+    "type":  "module",
+    "scripts":  {
+                    "dev":  "next dev",
+                    "build":  "next build",
+                    "lint":  "next lint",
+                    "preview":  "vite preview"
+                },
+    "dependencies":  {
+                         "lucide-react":  "^1.48.0",
+                         "react":  "^19.2.8",
+                         "react-dom":  "^19.2.8",
+                         "react-router-dom":  "^7.18.4",
+                         "next":  "15.0.0"
+                     },
+    "devDependencies":  {
+                            "@types/node":  "^24.13.3",
+                            "@types/react":  "^19.2.18",
+                            "@types/react-dom":  "^19.2.7",
+                            "oxlint":  "^1.81.0",
+                            "typescript":  "~6.0.2",
+                            "eslint-config-next":  "15.0.0"
+                        }
+}

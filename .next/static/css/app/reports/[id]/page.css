@@ -1,0 +1,295 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/reports/[id]/Report.module.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+.Report_container__l4PH6 {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-8) 0 var(--space-16);
+}
+
+.Report_reportHeader__LniFP {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 2px solid var(--color-black);
+  padding-bottom: var(--space-6);
+  margin-bottom: var(--space-12);
+}
+
+.Report_reportTitle__80n1i {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+.Report_roleTitle__CD5Ol {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.Report_companyDate__P6hUx {
+  font-size: 16px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.Report_companyDate__P6hUx span {
+  color: var(--text-tertiary);
+}
+
+.Report_overallScoreBox__EEbW2 {
+  text-align: right;
+}
+
+.Report_scoreLabel__f8vkA {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-2);
+}
+
+.Report_scoreValue__I7dKn {
+  font-family: var(--font-mono);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+.Report_scoreTotal__3qJmH {
+  font-size: 24px;
+  color: var(--text-tertiary);
+}
+
+/* Grid Layouts */
+.Report_gridTwoCol__o4HSI {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: var(--space-12);
+  gap: var(--space-12);
+  margin-bottom: var(--space-12);
+}
+
+/* Section styling */
+.Report_sectionTitle__bvi3Q {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-6);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Monochrome Meters */
+.Report_meterRow__Th5fT {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.Report_meterLabel__TscVh {
+  width: 160px;
+  font-size: 13px;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.Report_meterTrack__FejCU {
+  flex-grow: 1;
+  height: 2px;
+  background-color: var(--border-subtle);
+  margin: 0 var(--space-4);
+  position: relative;
+}
+
+.Report_meterFill__V2E0Y {
+  height: 100%;
+  background-color: var(--color-black);
+}
+
+.Report_meterValue__um_SB {
+  width: 24px;
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+/* Chart Container */
+.Report_chartContainer__6Lga0 {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  background-color: var(--bg-surface);
+}
+
+/* Text Lists (Strengths/Weaknesses) */
+.Report_listContainer__new8j {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.Report_listItem__63KAR {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Accordion */
+.Report_accordion__dwbXn {
+  border-top: 1px solid var(--border-strong);
+}
+
+.Report_accordionRow__0U7bG {
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.Report_accordionHeader__yg2lq {
+  display: grid;
+  grid-template-columns: 120px 80px 1fr auto;
+  align-items: center;
+  padding: var(--space-4) 0;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.Report_accordionHeader__yg2lq:hover {
+  background-color: var(--bg-surface-hover);
+}
+
+.Report_accQuestionNum__dOd6o {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.Report_accScore__OVvR9 {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.Report_accCategory__Wh4os {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.Report_accAction__CKu6n {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.Report_accordionContent__n6gcw {
+  padding: var(--space-6) 0 var(--space-8) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.Report_questionBlock__JeBSW {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text-primary);
+  max-width: 800px;
+}
+
+.Report_dataGrid__EQbbj {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: var(--space-6);
+  gap: var(--space-6);
+}
+
+.Report_dataBlock__wqjVl {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.Report_dataLabel__Y5CYZ {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.Report_dataValue__TB_md {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.Report_evidenceGrid__ZJ78O {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: var(--space-4);
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background-color: var(--bg-surface-hover);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.Report_evidenceBlock__VlJwK {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.Report_evidenceLabel__jx3P8 {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.Report_evidenceValue__voTQU {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .Report_reportHeader__LniFP {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-6);
+  }
+  .Report_overallScoreBox__EEbW2 {
+    text-align: left;
+  }
+  .Report_gridTwoCol__o4HSI {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+  .Report_accordionHeader__yg2lq {
+    grid-template-columns: 100px 1fr auto;
+  }
+  .Report_accCategory__Wh4os {
+    display: none;
+  }
+  .Report_dataGrid__EQbbj, .Report_evidenceGrid__ZJ78O {
+    grid-template-columns: 1fr;
+  }
+}
+

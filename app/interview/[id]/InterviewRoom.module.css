@@ -1,0 +1,309 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--color-black); /* Dark mode forced for interview */
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+/* Specific overrides for interview mode to avoid overriding layout if nested */
+.container * {
+  border-color: var(--color-gray-800);
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-6);
+  height: 56px;
+  border-bottom: 1px solid var(--color-gray-800);
+  background-color: var(--color-black);
+}
+
+.brand {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-gray-400);
+}
+
+.centerMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-gray-300);
+}
+
+.time {
+  padding: 2px 8px;
+  background-color: var(--color-gray-900);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-gray-800);
+}
+
+.endButton {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-gray-300);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-gray-800);
+  background-color: var(--color-black);
+  transition: all var(--transition-fast);
+}
+
+.endButton:hover {
+  background-color: #dc2626;
+  border-color: #dc2626;
+  color: var(--color-white);
+}
+
+/* Main Area */
+.main {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  grid-template-rows: 1fr 200px; /* Transcript takes bottom 200px */
+}
+
+/* Question Area */
+.questionPanel {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  padding: var(--space-12) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid var(--color-gray-800);
+  position: relative;
+}
+
+.questionNumber {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-gray-500);
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.questionText {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--color-white);
+  margin-bottom: var(--space-6);
+  max-width: 800px;
+  transition: opacity var(--transition-normal);
+}
+
+.questionMetadata {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.metaBadge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 8px;
+  border: 1px solid var(--color-gray-800);
+  border-radius: var(--radius-sm);
+  color: var(--color-gray-400);
+}
+
+/* Status Indicator */
+.statusIndicator {
+  position: absolute;
+  top: var(--space-6);
+  left: var(--space-8);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-gray-400);
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-gray-600);
+}
+.statusDot.active {
+  background-color: #16a34a; /* Green when listening/processing */
+}
+.statusDot.error {
+  background-color: #dc2626; /* Red when WS drops */
+}
+
+/* Candidate Panel */
+.candidatePanel {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  border-left: 1px solid var(--color-gray-800);
+  background-color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+}
+
+.videoWrapper {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background-color: var(--color-gray-900);
+  border-bottom: 1px solid var(--color-gray-800);
+  position: relative;
+  overflow: hidden;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1); /* Mirror effect */
+}
+
+.videoOverlay {
+  position: absolute;
+  bottom: var(--space-2);
+  left: var(--space-2);
+  right: var(--space-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.camMicStatus {
+  display: flex;
+  gap: var(--space-2);
+  padding: 4px 8px;
+  background-color: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.icon {
+  width: 14px;
+  height: 14px;
+  color: var(--color-white);
+}
+
+.recIndicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #ef4444;
+  background-color: rgba(0,0,0,0.6);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+.recDot {
+  width: 6px;
+  height: 6px;
+  background-color: #ef4444;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+/* Diagnostics / Connection under Video */
+.diagnostics {
+  padding: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-gray-400);
+}
+
+.diagRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px dotted var(--color-gray-800);
+}
+
+/* Transcript Area */
+.transcriptPanel {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  border-top: 1px solid var(--color-gray-800);
+  background-color: var(--color-gray-900);
+  padding: var(--space-4) var(--space-8);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.transcriptLine {
+  font-size: 14px;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+
+.speakerName {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-gray-500);
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
+.speakerText {
+  color: var(--color-gray-300);
+}
+
+.speakerText.candidate {
+  color: var(--color-white);
+}
+
+.notFinal {
+  opacity: 0.6;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: 1024px) {
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    overflow-y: auto;
+  }
+  .questionPanel {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    border-right: none;
+    border-bottom: 1px solid var(--color-gray-800);
+  }
+  .candidatePanel {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    border-left: none;
+    flex-direction: row;
+    height: 120px;
+  }
+  .videoWrapper {
+    width: 160px;
+    border-bottom: none;
+    border-right: 1px solid var(--color-gray-800);
+  }
+  .diagnostics {
+    flex-grow: 1;
+  }
+  .transcriptPanel {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+}
