@@ -1,0 +1,7 @@
+cd C:\Users\amanb\OneDrive\Desktop\final_whisper_tuned_model
+python -m uvicorn src.api:app --reload --host 127.0.0.1 --port 8000
+
+
+
+cd C:\Users\amanb\OneDrive\Desktop\final_whisper_tuned_model\ai-interview
+npm run dev
