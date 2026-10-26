@@ -1,0 +1,219 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  margin-bottom: var(--space-6);
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-surface);
+  padding: 0 var(--space-3);
+  flex-grow: 1;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.searchIcon {
+  color: var(--text-secondary);
+  width: 14px;
+  height: 14px;
+}
+
+.searchInput {
+  border: none;
+  background: none;
+  padding: 8px var(--space-2);
+  font-size: 13px;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  outline: none;
+  width: 100%;
+}
+
+.searchInput::placeholder {
+  color: var(--text-tertiary);
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.filterLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.select, .dateInput {
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 6px var(--space-2);
+  font-size: 13px;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background-color: var(--bg-surface);
+  outline: none;
+}
+
+/* Table */
+.tableContainer {
+  flex-grow: 1;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background-color: var(--bg-surface);
+  overflow: auto;
+  position: relative;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th {
+  padding: var(--space-3) var(--space-4);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  background-color: var(--bg-app);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  user-select: none;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.table th:hover {
+  color: var(--text-primary);
+}
+
+.thContent {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sortIcon {
+  width: 12px;
+  height: 12px;
+  opacity: 0.3;
+}
+
+.sortIcon.active {
+  opacity: 1;
+  color: var(--color-black);
+}
+
+.table td {
+  padding: var(--space-2) var(--space-4);
+  font-size: 13px;
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background-color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.tableRow {
+  cursor: pointer;
+  outline: none;
+}
+
+.tableRow:hover td {
+  background-color: var(--bg-surface-hover);
+}
+
+.tableRow:focus td {
+  background-color: var(--bg-surface-active);
+}
+
+.tableRow.selected td {
+  background-color: var(--bg-surface-active);
+}
+
+.tableRow:last-child td {
+  border-bottom: none;
+}
+
+.monoCell {
+  font-family: var(--font-mono);
+}
+
+.badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.emptyState {
+  padding: var(--space-12);
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-4);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.pageControls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.pageBtn {
+  border: 1px solid var(--border-strong);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.pageBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pageBtn:not(:disabled):hover {
+  background-color: var(--bg-surface-hover);
+}
